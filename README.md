@@ -1,2 +1,2 @@
-# Text_Analysis_with_Python_CEU
-Course Material
+# Text Analysis with Python
+Course Material for CEU Econ graduates.
