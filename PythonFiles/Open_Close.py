@@ -1,7 +1,7 @@
 
 #import the libraries
 import os
-#here you can change the directory that is on your on computer
+#here you can change the directory that is on your on computer. Remind to use / instead of \. The first is compatible across platforms.
 os.chdir("")
 f=open("Outputs/first_file.txt",'w') 
 
