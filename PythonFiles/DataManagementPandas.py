@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 #change to your own working directory
-os.chdir("")
+os.chdir("/Users/ariedamuco/Dropbox (CEU Econ)/TextAnalysisCEU")
 
 data_first= pd.read_csv('Outputs/Barcelona_counter_freq.txt', delimiter=";") 
 
@@ -12,14 +12,25 @@ data_first= pd.read_csv('Outputs/Barcelona_counter_freq.txt', delimiter=";")
 data_first.describe()
 
 #check the word with the highest frequency
-data_first[data_first['frequency'] == 13]['word']
+data_first[data_first['count'] == 13]['word']
 
-#data_first['frequency'].min()
-#data_first['frequency'].max()
+#sort the data
+data_first= data_first.sort_values('count', ascending=False)
+data_head= data_first.head()
+
+#rename columns
+new_cols = ["Most Frequent Word", "f2"]
+data_head.columns = new_cols
+#plot the most common words
+fig=data_head.set_index("Most Frequent Word").f2.plot(kind='bar', colormap='PiYG').get_figure()
+fig.savefig('Output/most_common.png')
+
+#data_first['count'].hist()
+#data_first['count'].min()
+#data_first['count'].max()
 
 
 #get the tables in a wikipedia article such as the Billboard Hot number one singles
-
 data70=pd.read_html("https://en.wikipedia.org/wiki/List_of_Billboard_Hot_100_number-one_singles_of_the_1970s")
 #get the third line of the data
 
