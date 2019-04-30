@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr 30 13:39:13 2019
+
+@author: ariedamuco
+"""
+
 
 
 #In python strings are concatenated using +
@@ -84,12 +92,12 @@ vec_symbol_free=symbol_free.split()
 #let's create a function that takes every string and converts it into a clean string
 
 def remove_junk(text):
-    junck_free="" 
+    junk_free="" 
     punc=[",", ".", "/;","'", "?", "&", "!", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     for i in range(len(text)):
         if text[i] not in punc:
             word=text[i].lower()
-            junck_free=junck_free+word
+            junck_free=junk_free+word
     return junck_free
 
 print(remove_junk(poem))
@@ -98,13 +106,13 @@ print(remove_junk("Let's see how176 we could deal with puntuation and numbers 23
 
 
 def remove_junk_in_vec(text):
-    junck_free="" 
+    junk_free="" 
     punc=[",", ".", "/;","'", "?", "&", "!", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     for i in range(len(text)):
         if text[i] not in punc:
             word=text[i].lower()
-            junck_free=junck_free+word
-    vec=junck_free.split()               
+            junk_free=junk_free+word
+    vec=junk_free.split()               
     return vec
     
 print(remove_junk_in_vec(poem))
