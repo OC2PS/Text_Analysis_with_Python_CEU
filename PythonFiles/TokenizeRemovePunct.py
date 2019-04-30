@@ -31,5 +31,5 @@ file_write_barca.write("word" + ';' + "count" +  '\n')
 #write each line
 for key, value in Counter(vec_of_words).items(): 
     file_write_barca.write(key + ';' + str(value) +  '\n')
-
+#find an alternative way to write the dictionary into a .csv
 file_write_barca.close()
