@@ -3,10 +3,7 @@
 
 
 import os
-os.chdir("/Users/ariedamuco/Dropbox (CEU Econ)/TextAnalysisCEU")
-
- 
-
+os.chdir("")
 
 
 #import string
