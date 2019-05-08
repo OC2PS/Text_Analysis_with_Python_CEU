@@ -12,10 +12,3 @@ id_n=["B3","B4","B5","B6"]
 for item in id_n:
     f.write(item+"\n")
 f.close()
-
-
-    
-    
-
-
-
