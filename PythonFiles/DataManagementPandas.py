@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 #change to your own working directory
-os.chdir("/Users/ariedamuco/Dropbox (CEU Econ)/TextAnalysisCEU")
+os.chdir("")
 
 data_first= pd.read_csv('Outputs/Barcelona_counter_freq.txt', delimiter=";") 
 
