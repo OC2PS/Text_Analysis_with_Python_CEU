@@ -3,7 +3,7 @@
 import PyPDF2
 import os
 
-os.chdir("/Users/ariedamuco/Dropbox (CEU Econ)/TextAnalysisCEU/Input/pdfs")
+os.chdir("/Users/ariedamuco/Dropbox (CEU Econ)/TextAnalysisCEU/Input")
 
 WBL2019=open('app20170223.pdf', "rb")
 reader=PyPDF2.PdfFileReader(WBL2019)
@@ -28,7 +28,7 @@ for pageNum in range(reader2.numPages):
     page=reader2.getPage(pageNum)
     writer.addPage(page)
     
-outputFile=open('../../Outputs/combined.pdf','wb')
+outputFile=open('../Outputs/combined.pdf','wb')
 writer.write(outputFile)
 
 outputFile.close()

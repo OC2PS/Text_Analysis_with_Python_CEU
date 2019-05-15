@@ -155,3 +155,5 @@ data70['year']=data70.date_s.str.replace(",", "").str.split(" ").str[2]
 players=pd.read_html("http://www.basketball-reference.com/awards/slam_500_greatest.html")
 players=players[0]
 """
+data70.to_csv('Outputs/greatest_hits.csv', index=None, sep=";")
+
