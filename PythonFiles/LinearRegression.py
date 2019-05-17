@@ -34,9 +34,6 @@ plt.savefig('Outputs/HistPrice.png')
 #select all up to the last two columns, in x we are going to store our regressors (features)
 x=data.iloc[:, 0:5]
 
-#out of date command
-#x=data1.ix[:,1:6]
-
 #explore the regressors
 x.head()
 
