@@ -6,8 +6,6 @@ Naive Bayes and Text Analysis
 """
 
 # ONLY RUN THIS CELL IF YOU NEED 
-# TO DOWNLOAD NLTK AND HAVE CONDA
-
 # Uncomment the code below and run:
 
 
