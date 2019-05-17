@@ -5,7 +5,7 @@ import pandas as pd
 from pandas import DataFrame
 import os
 #YOUR directory
-os.chdir("/Users/ariedamuco/Dropbox (CEU Econ)/TextAnalysisCEU")
+os.chdir("")
 #from sklearn import linear_model
 data= pd.read_csv("Input/USA_Housing.csv")
 
