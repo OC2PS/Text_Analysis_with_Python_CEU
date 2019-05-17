@@ -73,12 +73,10 @@ messages.hist(column='length', by='label',color='red', bins=50,figsize=(10,4), r
 #########################
 
 """
-Differently from before, now we are dealing with text data. 
-The classification algorithms that we've learned about so far will need numerical 
-feature vector in order to perform the classification task. 
+The classification algorithms need numerical feature vector in order to perform the classification task. 
 There are actually many methods to convert a corpus to a vector format. 
 The simplest is the the bag-of-words approach, where each unique word in a text 
-will be represented by one number. (As in the example I showed with the Barcelona file)
+will be represented by one number. (As in the Barcelona example)
 Similarly we will convert these messages sequences of numbers.
 Exactly as yesterday we will split a message into its individual words and return a list.
 Moreover, we also remove very common words, ('that', 'on', 'the'). 
@@ -96,8 +94,7 @@ list of all the possible punctuation:
 """
 The bag-of-words model is a simplifying representation used in natural language processing 
 and information retrieval (IR). In this model, a text (such as a sentence or a document)
-is represented as the bag (multiset) of its words, 
-disregarding grammar and even word order but keeping multiplicity. 
+is represented as the bag (multiset) of its words, disregarding grammar and even word order but keeping multiplicity. 
 The bag-of-words model has also been used for computer vision.
 The simplest is the the bag-of-words approach, where each unique word in a text will be represented by one number.
 """
@@ -157,7 +154,7 @@ Normalize the vectors to unit length, to abstract from the original text length 
 
 Let's begin the first step:
 Each vector will have as many dimensions as there are unique words in the SMS corpus.
- We will first use SciKit Learn's CountVectorizer. This model will convert a collection 
+ We will first use SciKit Learn CountVectorizer. This model will convert a collection 
  of text documents to a matrix of token counts.
 We can imagine this as a 2-Dimensional matrix. 
 Where the 1-dimension is the entire vocabulary (1 row per word) 
