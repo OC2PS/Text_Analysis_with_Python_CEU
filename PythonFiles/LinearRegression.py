@@ -1,4 +1,5 @@
 
+
 #import libraries
 import pandas as pd
 from pandas import DataFrame
@@ -31,7 +32,7 @@ plt.savefig('Outputs/HistPrice.png')
 
 
 #select all up to the last two columns, in x we are going to store our regressors (features)
-x=data.iloc[:, 1:6]
+x=data.iloc[:, 0:5]
 
 #out of date command
 #x=data1.ix[:,1:6]
@@ -45,13 +46,13 @@ sns.pairplot(data)
 plt.savefig('Outputs/pairwise_corr.png')
 
 #heatmap of the correlations
-#sns.heatmap(data.corr(), annot=True)
-
+#sns.heatmap(data.corr(), annot=True, cmap="Blues")
+#plt.savefig('Outputs/heatmap.png')
 
 from sklearn.model_selection import train_test_split
 
 #make the train test split
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=850112)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.4, random_state=101)
 
 """
 http://machinelearningmastery.com/evaluate-performance-machine-learning-algorithms-python-using-resampling/
@@ -72,6 +73,7 @@ reg.fit(x_train, y_train)
 #show coefficients
 reg.coef_
 
+#x.columns
 #show intercept
 reg.intercept_ 
 
@@ -91,16 +93,14 @@ coeff_data
 
 #we want to check correctedness of our model using the testing data
 yhat=reg.predict(x_test)
-yhat_train= reg.predict(x_train)
-
-plt.scatter(yhat, y_test)
+plt.scatter(y_test, yhat)
 
 
 
 #distribution of the residuals
 #create the residuals
 error=yhat-y_test
-sns.distplot(error)
+sns.distplot(yhat-y_test)
 #plt.hist(error, bins=30)
 plt.show()
 
@@ -111,14 +111,12 @@ MSE is preferred to MAE because it punished harsher larger errors
 RMSE is preferred to the above because is interpretable in units of y
 """
 from sklearn.metrics import mean_squared_error
-mean_squared_error(y_test, yhat, multioutput='raw_values')
+mean_squared_error(y_test, yhat)
 
 import numpy as np
-np.sqrt(mean_squared_error(y_test, yhat, multioutput='raw_values'))
+np.sqrt(mean_squared_error(y_test, yhat))
 
 plt.scatter(error, y_test)
-
-
 
 
 # Using seabron to create a linear fit
