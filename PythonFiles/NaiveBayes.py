@@ -102,16 +102,27 @@ from nltk.corpus import stopwords
 stopwords.words('english')# Show the vector of stop words
 
 
-#In here we can use the same processing that we did yesterday (Look at file StringOperation)
-
+#In here we can use the same processing that we did in previous classes
+"""
 def remove_junk_in_vec(text):
     junck_free="" 
-    punc=[",", ".", ";","'", "?", "&", "!", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    punc=[",", ".", ";","'", "?", "&", "!", "-"]
     for i in range(len(text)):
         if text[i] not in punc:
             word=text[i].lower()
-            junck_free=junck_free+word
-    vec=junck_free.split()               
+            junk_free=junk_free+word
+    vec=junk_free.split()               
+    return vec
+"""
+#or alternatively
+import string
+
+def remove_junk_in_vec(text):
+    junk_free="" 
+    for i in text:
+        if i.lower() not in string.punctuation:
+            junk_free=junk_free+i.lower()
+    vec=junk_free.split()               
     return vec
 
     
