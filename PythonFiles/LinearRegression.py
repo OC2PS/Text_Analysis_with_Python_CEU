@@ -107,14 +107,14 @@ Other ways to evaluate models are mean absolute error (MAE) and mean squared err
 MSE is preferred to MAE because it punished harsher larger errors
 RMSE is preferred to the above because is interpretable in units of y
 """
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 mean_squared_error(y_test, yhat)
 
 import numpy as np
 np.sqrt(mean_squared_error(y_test, yhat))
 
+
+#from sklearn.metrics import mean_absolute_error
+mean_absolute_error(y_test, yhat)
+
 plt.scatter(error, y_test)
-
-
-# Using seabron to create a linear fit
-#sns.lmplot('Price','Avg. Area Income', data=data)
