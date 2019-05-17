@@ -49,7 +49,7 @@ plt.savefig('Outputs/pairwise_corr.png')
 from sklearn.model_selection import train_test_split
 
 #make the train test split
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.4, random_state=101)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=1)
 
 """
 http://machinelearningmastery.com/evaluate-performance-machine-learning-algorithms-python-using-resampling/
