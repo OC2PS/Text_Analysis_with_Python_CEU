@@ -94,7 +94,10 @@ class_predict = logistic.predict(X_test)
 print ("METRIC SCORE: ", metrics.accuracy_score(Y_test,class_predict))
 
 #72 percent accuracy score which is an ok score. Maybe with inclusion of more predictors
-#we could improve the fit
+#we could improve the fit. Check fit better.
+
+from sklearn.metrics import confusion_matrix
+tn, fp, fn, tp = confusion_matrix(Y_test,class_predict).ravel()
 
 
 
