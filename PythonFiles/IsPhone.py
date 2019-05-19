@@ -1,9 +1,7 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+
 """
-Automate the Boring Stuff
-Pattern
-xxx-xxx-xxxx
+This example can be found in Automate the Boring Stuff
+Pattern of the US phone numbers xxx-xxx-xxxx
 """
 
 def isPhoneNumber(text):
