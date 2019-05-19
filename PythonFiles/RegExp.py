@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Automate the Boring Stuff
-
+This example can be found in: Automate the Boring Stuff
 """
 
 import re
