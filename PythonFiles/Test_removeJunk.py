@@ -4,7 +4,7 @@
 import os
 
 #change to your own working directory
-os.chdir("/Users/ariedamuco/Dropbox (CEU Econ)/TextAnalysisCEU")
+os.chdir("")
 file_read=open("Input/Barcelona.txt", 'r', encoding="utf-8") 
 
 content = file_read.readlines()
@@ -13,7 +13,7 @@ content=" ".join(content)
 
 def remove_junk(text):
     junk_free="" 
-    punc=[",", ".", "/;","'", "?", "&",
+    punc=[",", ".", ";","'", "?", "&",
           "!", "-", "0", "1", "2", "3",
           "4", "5", "6", "7", "8", "9"]
     for i in range(len(text)):
