@@ -14,7 +14,7 @@ p1=page.extractText()
 
 
 file1=open('app20170223.pdf', "rb")
-file2=open('app20170223.pdf', "rb")
+file2=open('app20170295.pdf', "rb")
 reader1=PyPDF2.PdfFileReader(file1)
 reader2=PyPDF2.PdfFileReader(file2)
 writer=PyPDF2.PdfFileWriter()
