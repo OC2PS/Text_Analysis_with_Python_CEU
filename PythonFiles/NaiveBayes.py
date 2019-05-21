@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Naive Bayes and Text Analysis
-@author: ariedamuco
-"""
-
 # ONLY RUN THIS CELL IF YOU NEED 
 # TO DOWNLOAD NLTK AND HAVE CONDA
 
