@@ -2,7 +2,7 @@
 
 import os
 import pandas as pd
-os.chdir("/Users/ariedamuco/Downloads")
+os.chdir("")
 titanic_train= pd.read_csv("train.csv")
 
 titanic_train.info()
