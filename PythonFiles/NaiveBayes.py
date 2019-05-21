@@ -1,11 +1,6 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Naive Bayes and Text Analysis
-@author: ariedamuco
-"""
-
 # ONLY RUN THIS CELL IF YOU NEED 
+# TO DOWNLOAD NLTK AND HAVE CONDA
+
 # Uncomment the code below and run:
 
 
@@ -21,13 +16,13 @@ Naive Bayes and Text Analysis
 #########################
 
 import os
-os.chdir("/Users/ariedamuco/Dropbox (CEU Econ)/TextAnalysisCEU")
+os.chdir("")
 
 #UC Irvine datasets on ML. https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection 
 
 
 #open the data as we learned yesterday
-file=open('Input/smsspamcollection/SMSSpamCollection', encoding='utf-8')
+file=open('Input/smsspamcollection/SMSSpamCollection')
 
 #read the lines
 data = file.readlines()
@@ -41,16 +36,16 @@ for line in range(0,5):
     
 #now open the same file in pandas
 import pandas as pd
-messages = pd.read_csv('Input/smsspamcollection/SMSSpamCollection', sep='\t',
-                           names=["label", "message"])
+messages = pd.read_csv('Input/smsspamcollection/SMSSpamCollection', sep='\t',names=["label", "message"])
 messages.head()
 messages.info()
 messages.describe()
 
-messages.groupby('label').describe()
-messages['length'] = messages['message'].apply(len)
+d1=messages.groupby('label').describe()
 
 import seaborn as sns
+messages['length'] = messages['message'].apply(len)
+
 sns.set_style('whitegrid')
 
 messages['length'].plot(bins=50, kind='hist',color='red')
@@ -74,7 +69,7 @@ messages.hist(column='length', by='label',color='red', bins=50,figsize=(10,4), r
 The classification algorithms need numerical feature vector in order to perform the classification task. 
 There are actually many methods to convert a corpus to a vector format. 
 The simplest is the the bag-of-words approach, where each unique word in a text 
-will be represented by one number. (As in the Barcelona example)
+will be represented by one number. (As in the example I showed with the Barcelona file)
 Similarly we will convert these messages sequences of numbers.
 Exactly as yesterday we will split a message into its individual words and return a list.
 Moreover, we also remove very common words, ('that', 'on', 'the'). 
@@ -92,7 +87,8 @@ list of all the possible punctuation:
 """
 The bag-of-words model is a simplifying representation used in natural language processing 
 and information retrieval (IR). In this model, a text (such as a sentence or a document)
-is represented as the bag (multiset) of its words, disregarding grammar and even word order but keeping multiplicity. 
+is represented as the bag (multiset) of its words, 
+disregarding grammar and even word order but keeping multiplicity. 
 The bag-of-words model has also been used for computer vision.
 The simplest is the the bag-of-words approach, where each unique word in a text will be represented by one number.
 """
@@ -124,7 +120,6 @@ def remove_junk_in_vec(text):
             junk_free=junk_free+i.lower()
     vec=junk_free.split()               
     return vec
-
     
 #########################
 #NORMALIZATION
@@ -135,7 +130,6 @@ There are a lot of ways to continue normalizing this text.
 I.E Stemming or distinguishing by part of speech (http://www.nltk.org/book/ch05.html)
 
 """
-
 
 def text_preprocess(text):
     new_vec=[]
@@ -163,7 +157,7 @@ Normalize the vectors to unit length, to abstract from the original text length 
 
 Let's begin the first step:
 Each vector will have as many dimensions as there are unique words in the SMS corpus.
- We will first use SciKit Learn CountVectorizer. This model will convert a collection 
+ We will first use SciKit Learn's CountVectorizer. This model will convert a collection 
  of text documents to a matrix of token counts.
 We can imagine this as a 2-Dimensional matrix. 
 Where the 1-dimension is the entire vocabulary (1 row per word) 
@@ -196,11 +190,11 @@ print (bow9.shape)
 
 #Only one word has been repeated twice, by seeing the email it seems to be "claim"
 #let's check if this is the case
-print (bow_transformer.get_feature_names()[1544])
+print (bow_transformer.get_feature_names()[2206])
 
 #check out feature 9060
 print (bow_transformer.get_feature_names()[9060])
-
+print (bow_transformer.get_feature_names()[9519])
 #maybe we should have removed also symbols of currency such as pounds or maybe we
 #shouldn't as spams usually advertise stuff for sale or prize winning
 
@@ -254,6 +248,7 @@ from sklearn.model_selection import train_test_split
 
 msg_train, msg_test, label_train, label_test = train_test_split(messages['message'], messages['label'], test_size=0.2, random_state=1)
 
+#from sklearn.linear_model import LogisticRegression
 
 
 from sklearn.pipeline import Pipeline
@@ -271,3 +266,9 @@ pipeline.fit(msg_train,label_train)
 predictions = pipeline.predict(msg_test)
 
 print (classification_report(predictions,label_test))
+
+
+from sklearn.metrics import confusion_matrix
+#tn, fp, fn, tp = confusion_matrix(label_test,predictions).ravel()
+confusion_matrix(label_test,predictions)
+

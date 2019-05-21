@@ -2,7 +2,11 @@
 
 import os
 import pandas as pd
+<<<<<<< HEAD
 os.chdir("/Users/ariedamuco/Downloads")
+=======
+os.chdir("")
+>>>>>>> 4841117c99172e801e581196b0b1f63179338a76
 titanic_train= pd.read_csv("train.csv")
 
 titanic_train.info()
