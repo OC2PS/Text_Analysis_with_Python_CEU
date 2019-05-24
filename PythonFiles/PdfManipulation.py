@@ -5,7 +5,7 @@ import os
 
 os.chdir("/Users/ariedamuco/Dropbox (CEU Econ)/TextAnalysisCEU/Input")
 
-WBL2019=open('app20170223.pdf', "rb")
+WBL2019=open('WBL2019.pdf', "rb")
 reader=PyPDF2.PdfFileReader(WBL2019)
 reader.numPages
 page=reader.getPage(0)
