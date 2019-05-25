@@ -8,7 +8,7 @@ Created on Wed May 15 17:41:28 2019
 def remove_quiz(text):
         text2=str(text)
         junk_free="" 
-        punc=[",", ".", "/;","'", "?", "&", "!", "-", "[", "]", "(", ")", ":", ";"]
+        punc=[",", ".", ";","'", "?", "&", "!", "-", "[", "]", "(", ")", ":", ";"]
         for i in text2:
             if i not in punc:
                 word=i.lower()
