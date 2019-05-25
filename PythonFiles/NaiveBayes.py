@@ -160,14 +160,13 @@ Each vector will have as many dimensions as there are unique words in the SMS co
  We will first use SciKit Learn's CountVectorizer. This model will convert a collection 
  of text documents to a matrix of token counts.
 We can imagine this as a 2-Dimensional matrix. 
-Where the 1-dimension is the entire vocabulary (1 row per word) 
-and the other dimension are the actual documents, in this case a column per text message.
+Where the 1-dimension is the entire vocabulary 1 row per document (in this case a column per text message)
+and the other dimension are the words.
 
 Since there are so many messages, we can expect a lot of zero counts for the 
 presence of that word in that document. Because of this, SciKit Learn will output a Sparse Matrix.
 
 """
-
 
 from sklearn.feature_extraction.text import CountVectorizer
 
