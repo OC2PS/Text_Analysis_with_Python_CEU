@@ -1,22 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 30 13:39:13 2019
 
-@author: ariedamuco
-"""
-
-
-
-#In python strings are concatenated using +
+#In Python strings can be concatenated using +
 str1 = "Budapest"
 str2 = "is a beautiful city"
 full_string=str1+" "+ str2
 
 
-
 #another way to concatenate is via the join method
-
 full_string2= "".join([str1, " ", str2])
 
 full_string3= " ".join([str1,str2])
@@ -47,7 +36,6 @@ istitle() titles only
 startswith()
 endswith()
 """
-
 
 
 #this can be better done with regular expressions
