@@ -5,7 +5,7 @@ from collections import Counter
 
 def remove_junk_in_vec(text):
     junk_free="" 
-    punc=[",", ".", "/;","'", "?", "&", "!", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    punc=[",", ".", ";","'", "?", "&", "!", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     for i in range(len(text)):
         #remove punctuation
         if text[i] not in punc:

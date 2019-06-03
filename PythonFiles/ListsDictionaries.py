@@ -1,12 +1,4 @@
 
-
-
-##############################
-#Sequences, collections and iterations
-##############################
-
-#(SEQUENCES) lists and tuples
-
 """
 #Python has a great built-in list type named "list". 
 List literals are written within square brackets [ ]. 
@@ -71,7 +63,6 @@ new_list=[1,5,9,6,9]
 #square all elements in a list
 
 [i**2 for i in new_list]
-
 
 
 #Dictionaries are composed of key and values
